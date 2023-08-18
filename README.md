@@ -18,4 +18,14 @@ https://rapidapi.com/categoriesLinks to an external site.
 This app is built so that a user can extract information on the news,upcoming events and fun facts about kenya.
 
 ## Testing
-The user needs to clone the github repo by putting git clone 
+* The user needs to clone the github repo by putting **git clone https://github.com/cynthianekesa/api-assignment.git**
+* Enter into the app using **cd kenya-entertainment.js**
+* Use **node kenya-entertainment.js** to run the code
+
+## Install Dependancies
+* Download the latest node.js from https://nodejs.org/en and install
+* Install **npm install -g npm** for you to be able to use the node function and fetch module
+* Sign up for an api key on https://newsapi.org/ incase the api key i used might have expired
+
+## Terminal Command
+`node kenya-entertainment.js`
