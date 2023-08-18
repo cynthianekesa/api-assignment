@@ -1,8 +1,4 @@
 const readline = require('readline');
-const fetch = require('node-fetch'); // Make sure to install this package using npm or yarn
-
-const API_KEY = 'dbe89cda90d2423d83079bddecc3b0bf'; 
-const NEWS_API_URL = `https://newsapi.org/v2/top-headlines?country=ke&apiKey=${API_KEY}`;
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -17,35 +13,24 @@ function displayMenu() {
   console.log("4. Exit");
 }
 
-async function fetchNews() {
-  try {
-    const response = await fetch(NEWS_API_URL);
-    const data = await response.json();
-
-    if (data.status === 'ok') {
-      const articles = data.articles;
-      console.log("Current News in Kenya:");
-      articles.forEach((article, index) => {
-        console.log(`${index + 1}. ${article.title}`);
-        console.log(`   Source: ${article.source.name}`);
-        console.log(`   Description: ${article.description}`);
-        console.log(`   URL: ${article.url}`);
-        console.log();
-      });
-    } else {
-      console.log("Failed to fetch news.");
-    }
-  } catch (error) {
-    console.error("An error occurred while fetching news:", error);
-  }
-}
-
 function handleChoice(choice) {
   switch (choice) {
     case '1':
-      fetchNews();
+      // Implement code to fetch and display current news
+      console.log("Fetching current news...");
       break;
-    // Other cases...
+    case '2':
+      // Implement code to fetch and display upcoming events
+      console.log("Fetching upcoming events...");
+      break;
+    case '3':
+      // Implement code to display fun facts about Kenya
+      console.log("Here are some fun facts about Kenya...");
+      break;
+    case '4':
+      console.log("Exiting. Goodbye!");
+      rl.close();
+      break;
     default:
       console.log("Invalid choice. Please select a valid option.");
       break;
