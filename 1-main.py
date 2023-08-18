@@ -5,8 +5,8 @@
 import sys
 
 if __name__ == '__main__':
-    top_ten = __import__('1-top_ten').top_ten
+    get_country_info = __import__('1-cliapp').get_country_info
     if len(sys.argv) < 2:
-        print("Please pass an argument for the subreddit to search.")
+        print("Please pass an argument for the function to search.")
     else:
-        top_ten(sys.argv[1])
+        get_country_info(sys.argv[1])

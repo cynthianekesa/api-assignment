@@ -1,5 +1,5 @@
 const readline = import('readline');
-const fetch = import('node-fetch'); // Make sure to install this package using npm or yarn
+const fetch = import('node-fetch'); 
 
 const API_KEY = 'dbe89cda90d2423d83079bddecc3b0bf'; 
 const NEWS_API_URL = `https://newsapi.org/v2/top-headlines?country=ke&apiKey=${API_KEY}`;
@@ -45,7 +45,7 @@ function handleChoice(choice) {
     case '1':
       fetchNews();
       break;
-    // Other cases...
+    
     default:
       console.log("Invalid choice. Please select a valid option.");
       break;
@@ -56,8 +56,8 @@ function startApp() {
   displayMenu();
   rl.question("Please select an option: ", function(choice) {
     handleChoice(choice);
-    startApp(); // Continue the loop
+    startApp();
   });
 }
 
-startApp(); // Start the CLI app
+startApp();

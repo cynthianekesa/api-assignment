@@ -19,9 +19,9 @@ function displayMenu() {
 function handleChoice(choice) {
   switch (choice) {
     case '1':
-      const apiKey = 'dbe89cda90d2423d83079bddecc3b0bf'; // Replace with your actual API key
-      const newsUrl = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=dbe89cda90d2423d83079bddecc3b0bf'
-
+      const apiKey = 'dbe89cda90d2423d83079bddecc3b0bf';
+      const newsUrl = 'https://newsapi.org/v2/top-headlines?country=ke&apiKey=dbe89cda90d2423d83079bddecc3b0bf'
+.
     fetch(newsUrl)
     .then(response => response.json())
     .then(data => {
@@ -43,11 +43,11 @@ function handleChoice(choice) {
     });
       break;
     case '2':
-     // Implement code to fetch and display upcoming events
+    
       console.log("Fetching upcoming events...");
       break;
     case '3':
-      // Implement code to display fun facts about Kenya
+      
       console.log("Here are some fun facts about Kenya...");
       break;
     case '4':
@@ -64,8 +64,8 @@ function startApp() {
   displayMenu();
   rl.question("Please select an option: ", function(choice) {
     handleChoice(choice);
-    startApp(); // Continue the loop
+    startApp(); 
   });
 }
 
-startApp(); // Start the CLI app
+startApp(); 
