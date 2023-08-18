@@ -1,9 +1,12 @@
 const readline = require('readline');
+const fetch = require('node-fetch');
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
+
+import fetch from 'node-fetch';
 
 function displayMenu() {
   console.log("\nWelcome to the Kenya Info and Entertainment CLI App!");
@@ -16,11 +19,31 @@ function displayMenu() {
 function handleChoice(choice) {
   switch (choice) {
     case '1':
-      // Implement code to fetch and display current news
-      console.log("Fetching current news...");
+      const apiKey = 'dbe89cda90d2423d83079bddecc3b0bf'; // Replace with your actual API key
+      const newsUrl = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=dbe89cda90d2423d83079bddecc3b0bf'
+
+    fetch(newsUrl)
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'ok') {
+        console.log("Current News in Kenya:");
+        data.articles.forEach((article, index) => {
+          console.log(`${index + 1}. ${article.title}`);
+          console.log(`   Source: ${article.source.name}`);
+          console.log(`   Description: ${article.description}`);
+          console.log(`   URL: ${article.url}`);
+          console.log();
+        });
+      } else {
+        console.log("Failed to fetch news.");
+      }
+    })
+    .catch(error => {
+      console.error("An error occurred while fetching news:", error);
+    });
       break;
     case '2':
-      // Implement code to fetch and display upcoming events
+     // Implement code to fetch and display upcoming events
       console.log("Fetching upcoming events...");
       break;
     case '3':
